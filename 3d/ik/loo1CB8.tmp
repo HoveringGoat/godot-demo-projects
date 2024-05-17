@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyhjvb7q0b3j"]
+[gd_scene load_steps=10 format=3 uid="uid://dyhjvb7q0b3j"]
 
 [ext_resource type="Texture2D" uid="uid://bw3q8aq6gfuof" path="res://addons/sade/editor_gizmo_texture.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ctssefekxjogg" path="res://model/godot_battle_bot.dae" id="2"]
 [ext_resource type="Material" path="res://model/battle_bot_color.tres" id="3"]
 [ext_resource type="Script" path="res://target_from_mousepos.gd" id="5"]
 [ext_resource type="Script" path="res://addons/sade/ik_look_at.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://dhgpf3w8mh4ed" path="res://addons/sade/ik_look_at.png" id="7"]
 [ext_resource type="Script" path="res://button_change_scene.gd" id="8"]
 
 [sub_resource type="PlaneMesh" id="1"]
@@ -42,17 +43,26 @@ flip_axis = true
 
 [node name="IK_LookAt_Head" type="Node3D" parent="Camera3D/Targets"]
 script = ExtResource("6")
+__meta__ = {
+"_editor_icon": ExtResource("7")
+}
 skeleton_path = NodePath("../../../GodotBattleBot/Armature/Skeleton3D")
 bone_name = "Head"
 additional_rotation = Vector3(90, 0, 0)
 
 [node name="IK_LookAt_LeftArm" type="Node3D" parent="Camera3D/Targets"]
 script = ExtResource("6")
+__meta__ = {
+"_editor_icon": ExtResource("7")
+}
 skeleton_path = NodePath("../../../GodotBattleBot/Armature/Skeleton3D")
 bone_name = "Left_UpperArm"
 
 [node name="IK_LookAt_RightArm" type="Node3D" parent="Camera3D/Targets"]
 script = ExtResource("6")
+__meta__ = {
+"_editor_icon": ExtResource("7")
+}
 skeleton_path = NodePath("../../../GodotBattleBot/Armature/Skeleton3D")
 bone_name = "Right_UpperArm"
 additional_rotation = Vector3(0, 0, 180)
@@ -96,6 +106,9 @@ offset_right = -5.0
 offset_bottom = -10.0
 text = "Next scene"
 script = ExtResource("8")
+__meta__ = {
+"_edit_use_anchors_": false
+}
 scene_to_change_to = "res://fabrik_ik.tscn"
 
 [editable path="GodotBattleBot"]

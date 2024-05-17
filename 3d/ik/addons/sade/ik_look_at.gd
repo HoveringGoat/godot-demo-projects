@@ -65,8 +65,8 @@ func _ready():
 		if debug_messages:
 			print(name, " - IK_LookAt: Unknown update mode. NOT updating skeleton")
 
-	if Engine.editor_hint:
-		_setup_for_editor()
+	#if Engine.editor_hint:
+		#_setup_for_editor()
 
 
 func _process(_delta):
@@ -145,9 +145,9 @@ func update_skeleton():
 
 	# Apply additional rotation stored in additional_rotation to the bone.
 	if additional_rotation != Vector3.ZERO:
-		rest.basis = rest.basis.rotated(rest.basis.x, deg2rad(additional_rotation.x))
-		rest.basis = rest.basis.rotated(rest.basis.y, deg2rad(additional_rotation.y))
-		rest.basis = rest.basis.rotated(rest.basis.z, deg2rad(additional_rotation.z))
+		rest.basis = rest.basis.rotated(rest.basis.x, deg_to_rad(additional_rotation.x))
+		rest.basis = rest.basis.rotated(rest.basis.y, deg_to_rad(additional_rotation.y))
+		rest.basis = rest.basis.rotated(rest.basis.z, deg_to_rad(additional_rotation.z))
 
 	# If the position is set using an additional bone, then set the origin
 	# based on that bone and its length.
